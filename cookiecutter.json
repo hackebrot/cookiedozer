@@ -1,6 +1,9 @@
 {
     "full_name": "Raphael Pierzina",
     "email": "raphael@hackebrot.de",
-    "repo_name": "kivyapp",
-    "version": "0.1.0"
+    "repo_name": "helloworld",
+    "app_class_name": "HelloWorldApp",
+    "app_title": "Hello World!",
+    "version": "0.1.0",
+    "kivy_version": "1.8.0"
 }
