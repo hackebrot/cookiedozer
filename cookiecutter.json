@@ -4,6 +4,7 @@
     "repo_name": "helloworld",
     "app_class_name": "HelloWorldApp",
     "app_title": "Hello World!",
+    "short_description": "Simple app that features a gray button!",
     "version": "0.1.0",
     "kivy_version": "1.8.0",
     "year": "2015"
