@@ -45,7 +45,7 @@ class TransitionProgress(ProgressBar):
 
 class {{cookiecutter.app_class_name}}(App):
     """Simple Slideshow App with a user defined title.
-    
+
     It's timer property controls the speed in which slides change.
     """
 
