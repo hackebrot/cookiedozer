@@ -1,6 +1,7 @@
 {
     "full_name": "Raphael Pierzina",
     "email": "raphael@hackebrot.de",
+    "github_username": "hackebrot",
     "repo_name": "helloworld",
     "app_class_name": "HelloWorldApp",
     "app_title": "Hello World!",
