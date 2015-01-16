@@ -10,7 +10,7 @@ def basic_app():
     Returns:
       :class:`{{cookiecutter.app_class_name}}`: App instance
     """
-    from {{cookiecutter.repo_name}} import {{cookiecutter.app_class_name}}
+    from {{cookiecutter.repo_name}}.{{cookiecutter.repo_name}} import {{cookiecutter.app_class_name}}
     return {{cookiecutter.app_class_name}}()
 
 
