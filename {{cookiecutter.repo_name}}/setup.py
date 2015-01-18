@@ -19,6 +19,10 @@ setup(
     url = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.repo_name}}",
     packages=find_packages(),
     long_description=read('README.rst'),
+    install_requires = ['kivy>=1.8.0'],
+    package_data={
+        '{{cookiecutter.repo_name}}': ['*.kv*']
+    },
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Environment :: X11 Applications',
