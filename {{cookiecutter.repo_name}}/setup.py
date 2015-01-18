@@ -4,6 +4,25 @@ from setuptools import setup, find_packages
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
+
+class PyTest(TestCommand):
+    user_options = [('pytest-args=', 'a', "Arguments to pass to py.test")]
+
+    def initialize_options(self):
+        TestCommand.initialize_options(self)
+        self.pytest_args = []
+
+    def finalize_options(self):
+        TestCommand.finalize_options(self)
+        self.test_args = []
+        self.test_suite = True
+
+    def run_tests(self):
+        import pytest
+        errno = pytest.main(self.pytest_args)
+        sys.exit(errno)
+
+
 setup(
     name = "{{cookiecutter.repo_name}}",
     version = "{{cookiecutter.version}}",
@@ -28,6 +47,8 @@ setup(
             '{{cookiecutter.repo_name}}={{cookiecutter.repo_name}}.main:main'
         ]
     },
+    tests_require=['pytest'],
+    cmdclass={'test': PyTest},
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Environment :: X11 Applications',
