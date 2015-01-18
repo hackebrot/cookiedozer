@@ -23,6 +23,11 @@ setup(
     package_data={
         '{{cookiecutter.repo_name}}': ['*.kv*']
     },
+    entry_points={
+        'console_scripts': [
+            '{{cookiecutter.repo_name}}={{cookiecutter.repo_name}}.main:main'
+        ]
+    },
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Environment :: X11 Applications',
