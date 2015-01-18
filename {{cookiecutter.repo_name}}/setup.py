@@ -42,6 +42,7 @@ setup(
     ),
     url='https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.repo_name}}',
     install_requires=['kivy>=1.8.0'],
+    zip_safe=False,
     packages=find_packages(),
     package_data={
         '{{cookiecutter.repo_name}}': ['*.kv*']
