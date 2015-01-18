@@ -4,5 +4,9 @@
 from {{cookiecutter.repo_name}} import {{cookiecutter.app_class_name}}
 
 
-if __name__ == '__main__':
+def main():
     {{cookiecutter.app_class_name}}().run()
+
+
+if __name__ == '__main__':
+    main()
