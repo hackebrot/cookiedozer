@@ -2,6 +2,7 @@
 
 import pytest
 
+
 @pytest.fixture(scope="module")
 def app(request):
     """Uses the InteractiveLauncher to provide access to an app instance.
