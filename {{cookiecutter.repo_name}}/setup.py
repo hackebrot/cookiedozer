@@ -1,5 +1,5 @@
 import os
-from setuptools import setup
+from setuptools import setup, find_packages
 
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
@@ -17,7 +17,7 @@ setup(
         "android, touch, mobile, NUI"
     ),
     url = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.repo_name}}",
-    packages=['{{cookiecutter.repo_name}}'],
+    packages=find_packages(),
     long_description=read('README.rst'),
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
