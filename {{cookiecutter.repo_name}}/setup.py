@@ -11,7 +11,11 @@ setup(
     author_email = "{{cookiecutter.email}}",
     description = "{{cookiecutter.short_description}}",
     license = "MIT",
-    keywords = "example documentation tutorial",
+    keywords=(
+        "Python, cookiecutter, kivy, buildozer, pytest, projects, project "
+        "templates, example, documentation, tutorial, setup.py, package, "
+        "android, touch, mobile, NUI"
+    ),
     url = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.repo_name}}",
     packages=['{{cookiecutter.repo_name}}'],
     long_description=read('README.rst'),
