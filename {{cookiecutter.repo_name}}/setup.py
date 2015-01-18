@@ -28,21 +28,21 @@ class PyTest(TestCommand):
 
 
 setup(
-    name = "{{cookiecutter.repo_name}}",
-    version = "{{cookiecutter.version}}",
-    author = "{{cookiecutter.full_name}}",
-    author_email = "{{cookiecutter.email}}",
-    description = "{{cookiecutter.short_description}}",
-    license = "MIT",
+    name="{{cookiecutter.repo_name}}",
+    version="{{cookiecutter.version}}",
+    author="{{cookiecutter.full_name}}",
+    author_email="{{cookiecutter.email}}",
+    description="{{cookiecutter.short_description}}",
+    long_description=read('README.rst'),
+    license="MIT",
     keywords=(
         "Python, cookiecutter, kivy, buildozer, pytest, projects, project "
         "templates, example, documentation, tutorial, setup.py, package, "
         "android, touch, mobile, NUI"
     ),
-    url = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.repo_name}}",
+    url="https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.repo_name}}",
+    install_requires=['kivy>=1.8.0'],
     packages=find_packages(),
-    long_description=read('README.rst'),
-    install_requires = ['kivy>=1.8.0'],
     package_data={
         '{{cookiecutter.repo_name}}': ['*.kv*']
     },
