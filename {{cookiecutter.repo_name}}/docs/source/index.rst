@@ -13,6 +13,8 @@ Basics:
 .. toctree::
    :maxdepth: 2
 
+   readme
+
 Application:
 
 .. toctree::
