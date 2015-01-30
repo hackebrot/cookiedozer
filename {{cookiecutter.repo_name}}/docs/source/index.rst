@@ -6,11 +6,17 @@
 Welcome to {{cookiecutter.app_title}}'s documentation!
 ======================================================
 
-Contents:
+{{cookiecutter.short_description}}
+
+Basics:
 
 .. toctree::
    :maxdepth: 2
 
+Application:
+
+.. toctree::
+   :maxdepth: 2
 
 
 Indices and tables
