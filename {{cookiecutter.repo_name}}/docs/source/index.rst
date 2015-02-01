@@ -8,16 +8,19 @@ Welcome to {{cookiecutter.app_title}}'s documentation!
 
 {{cookiecutter.short_description}}
 
-Basics:
+Basics
+------
 
 .. toctree::
    :maxdepth: 2
 
    readme
 
-.. _app:
 
-Application:
+.. _apiref:
+
+API Reference
+-------------
 
 .. toctree::
    :maxdepth: 2
@@ -31,4 +34,3 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-
