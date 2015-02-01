@@ -15,10 +15,14 @@ Basics:
 
    readme
 
+.. _app:
+
 Application:
 
 .. toctree::
    :maxdepth: 2
+
+   {{cookiecutter.repo_name}}
 
 
 Indices and tables
