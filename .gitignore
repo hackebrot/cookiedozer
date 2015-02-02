@@ -28,6 +28,9 @@ var/
 *.manifest
 *.spec
 
+# Do not ignore buildozer.spec as it is required for our template
+!buildozer.spec
+
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
