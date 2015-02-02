@@ -1,16 +1,16 @@
 [app]
 
 # (str) Title of your application
-title = My Application
+title = {{cookiecutter.app_title}}
 
 # (str) Package name
-package.name = myapp
+package.name = {{cookiecutter.repo_name}}
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.test
+package.domain = {{cookiecutter.full_name|lower|replace(' ', '.')}}
 
 # (str) Source code where the main.py live
-source.dir = .
+source.dir = {{cookiecutter.repo_name}}
 
 # (list) Source files to include (let empty to include all the files)
 source.include_exts = py,png,jpg,kv,atlas
@@ -26,7 +26,7 @@ source.include_exts = py,png,jpg,kv,atlas
 
 # (str) Application versioning (method 1)
 version.regex = __version__ = ['"](.*)['"]
-version.filename = %(source.dir)s/main.py
+version.filename = %(source.dir)s/__init__.py
 
 # (str) Application versioning (method 2)
 # version = 1.2.0
