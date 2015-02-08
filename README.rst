@@ -1,13 +1,23 @@
 ===========
-cookiedozer
+Cookiedozer
 ===========
 
-Template for python kivy apps ready to be deployed to android devices with kivy-buildozer.
+`Cookiecutter`_ template for Python `Kivy`_ apps ready to be deployed to android devices with `Buildozer`_.
+
+
+Usage
+-----
+
+Generate a Kivy project::
+
+    cookiecutter https://github.com/hackebrot/cookiedozer
+
 
 License
 -------
 
-Distributed under the terms of the `MIT license`_, `Cookiedozer`_ is free and open source software
+Distributed under the terms of the `MIT license`_, Cookiedozer is free and open source software
+
 
 Examples
 --------
@@ -16,5 +26,7 @@ Examples
 .. image:: https://raw.githubusercontent.com/hackebrot/cookiedozer/master/cookiedozer02.png
 
 
+.. _`Buildozer`: https://github.com/kivy/buildozer
+.. _`Cookiecutter`: https://github.com/audreyr/cookiecutter
+.. _`Kivy`: https://github.com/kivy/kivy
 .. _`MIT License`: http://opensource.org/licenses/MIT
-.. _`Cookiedozer`: https://github.com/hackebrot/cookiedozer
