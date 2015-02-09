@@ -36,9 +36,8 @@ Parts of this template are explained in great detail over the course of the foll
 Constraints
 -----------
 
-The tool at hand for creating and deploying an apk, namely `Buildozer`_, is currently in alpha-development stage.
-
-Buildozer itself doesn’t depend on any library, however you must have a Linux or OSX computer to be able to compile for Android.
+The tool at hand for creating and deploying an apk, namely `Buildozer`_, is currently in beta stage.
+Although it doesn’t depend on any library, you must have a Linux or OSX computer to be able to compile for Android.
 
 See `Buildozer Docs`_.
 
