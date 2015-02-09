@@ -33,6 +33,16 @@ Parts of this template are explained in great detail over the course of the foll
 * Part 3: `Wrapping up Cookiedozer`_
 
 
+Constraints
+-----------
+
+The tool at hand for creating and deploying an apk, namely `Buildozer`_, is currently in alpha-development stage.
+
+Buildozer itself doesn’t depend on any library, however you must have a Linux or OSX computer to be able to compile for Android.
+
+See `Buildozer Docs`_.
+
+
 License
 -------
 
@@ -46,6 +56,7 @@ Examples
 .. image:: https://raw.githubusercontent.com/hackebrot/cookiedozer/master/cookiedozer02.png
 
 
+.. _`Buildozer Docs`: http://buildozer.readthedocs.org/en/latest/index.html
 .. _`Buildozer`: https://github.com/kivy/buildozer
 .. _`Cookiecutter`: https://github.com/audreyr/cookiecutter
 .. _`Create Your Own Cookiecutter`: http://www.hackebrot.de/python/create-your-own-cookiecutter/
