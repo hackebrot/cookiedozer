@@ -11,6 +11,10 @@ This `Kivy`_ app was generated with `Cookiecutter`_ along with `@hackebrot`_'s `
 Features
 --------
 
+* Minimal design with flat colors
+* Text labels that contain clickable links
+* Several slides that can be controlled via swipe gestures
+
 
 Requirements
 ------------
