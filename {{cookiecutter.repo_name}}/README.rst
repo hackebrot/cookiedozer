@@ -19,6 +19,28 @@ Requirements
 Installation
 ------------
 
+Clone the repository:
+
+.. code-block:: bash
+
+    $ git clone https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.repo_name}}.git
+    $ cd {{cookiecutter.repo_name}}
+
+Create a new virtual environment. Given that you are using `virtualenvwrapper`_:
+
+.. code-block:: bash
+
+    $ mkvirtualenv -a $(pwd) --system-site-packages {{cookiecutter.repo_name}}
+
+.. note:: If you prefer to set up a fresh env, feel free to omit the according option.
+    Chances are that you want to use your systems `Kivy`_ including all its dependencies such as `Cython`_.
+
+Install the app package in "editable" mode:
+
+.. code-block:: bash
+
+    $ python setup.py develop
+
 
 Usage
 -----
@@ -39,6 +61,8 @@ Please `file an issue`_ with a detailed description of the problem.
 .. _`@hackebrot`: https://github.com/hackebrot
 .. _`Cookiecutter`: https://github.com/audreyr/cookiecutter
 .. _`Cookiedozer`: https://github.com/hackebrot/cookiedozer
+.. _`Cython`: https://pypi.python.org/pypi/Cython/
 .. _`Kivy`: https://github.com/kivy/kivy
 .. _`MIT License`: http://opensource.org/licenses/MIT
 .. _`file an issue`: https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.repo_name}}/issues
+.. _`virtualenvwrapper`: https://virtualenvwrapper.readthedocs.org/en/latest/
