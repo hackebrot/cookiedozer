@@ -7,6 +7,23 @@
 
 This `Kivy`_ app was generated with `Cookiecutter`_ along with `@hackebrot`_'s `Cookiedozer`_ template.
 
+
+Features
+--------
+
+
+Requirements
+------------
+
+
+Installation
+------------
+
+
+Usage
+-----
+
+
 License
 -------
 
