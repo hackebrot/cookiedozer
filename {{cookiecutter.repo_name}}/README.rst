@@ -58,6 +58,42 @@ Install the app package in "editable" mode:
 Usage
 -----
 
+Launch the app via:
+
+.. code-block:: bash
+
+    $ {{cookiecutter.repo_name}}
+
+Run the `pytest`_ test suite:
+
+.. code-block:: bash
+
+    $ make test
+
+Generate an ``html`` coverage report and open it:
+
+.. code-block:: bash
+
+    $ make coverage
+
+Generate `Sphinx`_ ``html`` documentation and open it:
+
+.. code-block:: bash
+
+    $ make docs
+
+Build an android apk with `Buildozer`_:
+
+.. code-block:: bash
+
+    $ make apk
+
+Deploy the app to your android device with `Buildozer`_:
+
+.. code-block:: bash
+
+    $ make deploy
+
 
 License
 -------
