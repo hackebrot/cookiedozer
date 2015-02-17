@@ -7,19 +7,19 @@
 The root of :class:`{{cookiecutter.app_class_name}}` is created from the kv file.
 """
 
+import webbrowser
+
 import kivy
 kivy.require('{{cookiecutter.kivy_version}}')
 
+from kivy.animation import Animation
 from kivy.app import App
 from kivy.clock import Clock
-from kivy.uix.label import Label
-from kivy.uix.carousel import Carousel
-from kivy.uix.progressbar import ProgressBar
-from kivy.animation import Animation
 from kivy.logger import Logger
 from kivy.properties import BoundedNumericProperty, ObjectProperty
-
-import webbrowser
+from kivy.uix.carousel import Carousel
+from kivy.uix.label import Label
+from kivy.uix.progressbar import ProgressBar
 
 
 class RefLabel(Label):
