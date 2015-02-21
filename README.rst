@@ -51,7 +51,9 @@ Distributed under the terms of the `MIT license`_, Cookiedozer is free and open 
 Issues
 ------
 
-Please `file an issue`_ with a detailed description of the problem.
+This template has been tested on Ubuntu Trusty Tahr as well as Mac OS X Yosemite.
+
+If you encounter any problems, please `file an issue`_ along with a detailed description.
 
 
 Examples
