@@ -1,12 +1,5 @@
 # -*- coding: utf-8 -*-
 
-"""
-{{cookiecutter.repo_name}}
-============================
-
-The root of :class:`{{cookiecutter.app_class_name}}` is created from the kv file.
-"""
-
 import webbrowser
 
 import kivy
