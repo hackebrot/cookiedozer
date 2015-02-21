@@ -48,6 +48,14 @@ License
 Distributed under the terms of the `MIT license`_, Cookiedozer is free and open source software
 
 
+Issues
+------
+
+This template has been tested on Ubuntu Trusty Tahr as well as Mac OS X Yosemite.
+
+If you encounter any problems, please `file an issue`_ along with a detailed description.
+
+
 Examples
 --------
 
@@ -65,4 +73,5 @@ Examples
 .. _`PyPI`: https://pypi.python.org/pypi
 .. _`Sphinx`: http://sphinx-doc.org/
 .. _`Wrapping up Cookiedozer`: http://www.hackebrot.de/python/wrapping-up-cookiedozer/
+.. _`file an issue`: https://github.com/hackebrot/cookiedozer/issues
 .. _`pytest`: http://pytest.org/latest/
