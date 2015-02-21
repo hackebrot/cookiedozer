@@ -53,7 +53,14 @@ class TransitionProgress(ProgressBar):
 class {{cookiecutter.app_class_name}}(App):
     """Simple Slideshow App with a user defined title.
 
-    It's timer property controls the speed in which slides change.
+    Attributes:
+      title (str): Window title of the application
+
+      timer (:class:`kivy.properties.BoundedNumericProperty`):
+        Helper for the slide transition of `carousel`
+
+      carousel (:class:`kivy.uix.carousel.Carousel`):
+        Widget that holds several slides about the app
     """
 
     title = '{{cookiecutter.app_title}}'
