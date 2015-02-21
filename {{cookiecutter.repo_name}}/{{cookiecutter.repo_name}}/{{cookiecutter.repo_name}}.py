@@ -1,12 +1,5 @@
 # -*- coding: utf-8 -*-
 
-"""
-{{cookiecutter.repo_name}}
-============================
-
-The root of :class:`{{cookiecutter.app_class_name}}` is created from the kv file.
-"""
-
 import webbrowser
 
 import kivy
@@ -26,6 +19,11 @@ class RefLabel(Label):
     """Simple that opens a contained url in the webbrowser."""
 
     def on_ref_press(self, url):
+        """Callback which is being run when the user clicks on a ref in the
+        label.
+
+        :param str url: URL to be opened in the webbrowser
+        """
         Logger.info("Opening '{url}' in webbrowser.".format(url=url))
         webbrowser.open(url)
 
@@ -37,16 +35,25 @@ class TransitionProgress(ProgressBar):
     _out = Animation(opacity=0.0, duration=0.1)
 
     def fade_in(self):
+        """Play the animation for changing the ProgressBar to be opaque."""
         self._in.start(self)
 
     def fade_out(self):
+        """Play the animation to hide the ProgressBar."""
         self._out.start(self)
 
 
 class {{cookiecutter.app_class_name}}(App):
     """Simple Slideshow App with a user defined title.
 
-    It's timer property controls the speed in which slides change.
+    Attributes:
+      title (str): Window title of the application
+
+      timer (:class:`kivy.properties.BoundedNumericProperty`):
+        Helper for the slide transition of `carousel`
+
+      carousel (:class:`kivy.uix.carousel.Carousel`):
+        Widget that holds several slides about the app
     """
 
     title = '{{cookiecutter.app_title}}'
@@ -55,17 +62,22 @@ class {{cookiecutter.app_class_name}}(App):
     carousel = ObjectProperty(Carousel)
 
     def start_timer(self, *args, **kwargs):
+        """Schedule the timer update routine and fade in the progress bar."""
         Logger.debug("Starting timer")
         Clock.schedule_interval(self._update_timer, 1 / 60.0)
         self.progress_bar.fade_in()
 
     def stop_timer(self, *args, **kwargs):
+        """Reset the timer and unschedule the update routine."""
         Logger.debug("Stopping timer")
         Clock.unschedule(self._update_timer)
         self.progress_bar.fade_out()
         self.timer = 0
 
     def delay_timer(self, *args, **kwargs):
+        """Stop the timer but re-schedule it based on `anim_move_duration` of
+        :attr:`{{cookiecutter.app_class_name}}.carousel`.
+        """
         self.stop_timer()
         Clock.schedule_once(
             self.start_timer,
@@ -73,6 +85,12 @@ class {{cookiecutter.app_class_name}}(App):
         )
 
     def build(self):
+        """Initialize the GUI based on the kv file and set up events.
+
+        Returns:
+          (:class:`kivy.uix.anchorlayout.AnchorLayout`): Root widget specified
+            in the kv file of the app
+        """
         self.carousel = self.root.ids.carousel
         self.progress_bar = self.root.ids.progress_bar
         self.progress_bar.max = self.property('timer').get_max(self)
