@@ -100,6 +100,12 @@ class {{cookiecutter.app_class_name}}(App):
         self.carousel.bind(current_slide=self.delay_timer)
         return self.root
 
+    def on_pause(self):
+        return True
+
+    def on_resume(self):
+        pass
+
     def _update_timer(self, dt):
         try:
             self.timer += 1
