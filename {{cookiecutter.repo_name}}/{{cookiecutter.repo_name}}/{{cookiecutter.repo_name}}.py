@@ -101,9 +101,16 @@ class {{cookiecutter.app_class_name}}(App):
         return self.root
 
     def on_pause(self):
+        """Enables the user to switch to another application causing
+        :class:`{{cookiecutter.app_class_name}}` to wait until the user
+        switches back to it eventually.
+        """
         return True
 
     def on_resume(self):
+        """Called when the app is resumed. Used to restore data that has been
+        stored in :meth:`{{cookiecutter.app_class_name}}.on_pause`.
+        """
         pass
 
     def _update_timer(self, dt):
