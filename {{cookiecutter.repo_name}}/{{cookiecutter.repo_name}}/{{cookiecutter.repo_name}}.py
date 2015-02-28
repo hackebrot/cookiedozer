@@ -100,6 +100,12 @@ class {{cookiecutter.app_class_name}}(App):
         self.carousel.bind(current_slide=self.delay_timer)
         return self.root
 
+    def build_config(self, config):
+        """Create a config file on disk and assign the ConfigParser object to
+        :attr:`{{cookiecutter.app_class_name}}.config`.
+        """
+        config.setdefaults('user_settings', {'timer_interval': '1/60 sec'})
+
     def on_pause(self):
         """Enables the user to switch to another application causing
         :class:`{{cookiecutter.app_class_name}}` to wait until the user
