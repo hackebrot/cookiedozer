@@ -112,7 +112,7 @@ class {{cookiecutter.app_class_name}}(App):
 
     def build_config(self, config):
         """Create a config file on disk and assign the ConfigParser object to
-        :attr:`{{cookiecutter.app_class_name}}.config`.
+        `self.config`.
         """
         config.setdefaults('user_settings', {'timer_interval': '1/60 sec'})
 
@@ -123,8 +123,8 @@ class {{cookiecutter.app_class_name}}(App):
 
     def on_config_change(self, config, section, key, value):
         """Called when the user changes the config values via the settings
-        panel. If `timer_interval` is being changed update the local variable
-        :attr:`{{cookiecutter.app_class_name}}.timer_interval` accordingly.
+        panel. If `timer_interval` is being changed update the instance
+        variable of the same name accordingly.
         """
         if config is self.config:
             token = (section, key)
