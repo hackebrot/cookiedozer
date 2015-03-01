@@ -1,0 +1,11 @@
+[
+    {
+        "title": "Timer Interval",
+        "type": "options",
+        "section": "user_settings",
+        "key": "timer_interval",
+        "true": "auto",
+        "options": ["1/60 sec", "2 sec"],
+        "desc": "Changes the delay after which the timer is being updated."
+    }
+]

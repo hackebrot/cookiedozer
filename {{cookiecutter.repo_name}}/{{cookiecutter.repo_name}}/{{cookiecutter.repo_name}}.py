@@ -13,6 +13,7 @@ from kivy.properties import BoundedNumericProperty, ObjectProperty
 from kivy.uix.carousel import Carousel
 from kivy.uix.label import Label
 from kivy.uix.progressbar import ProgressBar
+from os.path import join, dirname
 
 
 class RefLabel(Label):
@@ -105,6 +106,11 @@ class {{cookiecutter.app_class_name}}(App):
         :attr:`{{cookiecutter.app_class_name}}.config`.
         """
         config.setdefaults('user_settings', {'timer_interval': '1/60 sec'})
+
+    def build_settings(self, settings):
+        """Read the user settings and create a panel from it."""
+        settings_file =  join(dirname(__file__), 'user_settings.json')
+        settings.add_json_panel(self.title, self.config, settings_file)
 
     def on_pause(self):
         """Enables the user to switch to another application causing
