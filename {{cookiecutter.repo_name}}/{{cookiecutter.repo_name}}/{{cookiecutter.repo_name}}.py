@@ -15,7 +15,11 @@ from kivy.uix.label import Label
 from kivy.uix.progressbar import ProgressBar
 from os.path import join, dirname
 
-TIMER_OPTIONS = {'2 sec': 2.0, '1/60 sec': 1 / 60.0}
+TIMER_OPTIONS = {
+    '1/60 sec': 1 / 60.0,
+    '1/30 sec': 1 / 30.0,
+    '1/15 sec': 1 / 15.0,
+}
 
 
 class RefLabel(Label):
