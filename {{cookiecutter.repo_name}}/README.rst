@@ -14,6 +14,7 @@ Features
 * Minimal design with flat colors
 * Text labels that contain clickable links
 * Several slides that can be controlled via swipe gestures
+* Settings panel to change the slider transition delay (``<F1>``)
 
 
 Requirements

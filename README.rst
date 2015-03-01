@@ -13,6 +13,7 @@ Features
 * `Sphinx`_ docs that can be used to generate a readable ``html`` documentation
 * `Buildozer`_ spec file that is used to deploy your app to an Android mobile device
 * ``Makefile`` featuring several targets for important tasks such as ``coverage`` and ``apk``
+* Comprehensive ``README.rst`` file that contains useful information about your app
 
 
 Usage
