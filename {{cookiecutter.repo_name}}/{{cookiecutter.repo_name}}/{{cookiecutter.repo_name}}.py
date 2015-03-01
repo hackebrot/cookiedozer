@@ -13,6 +13,13 @@ from kivy.properties import BoundedNumericProperty, ObjectProperty
 from kivy.uix.carousel import Carousel
 from kivy.uix.label import Label
 from kivy.uix.progressbar import ProgressBar
+from os.path import join, dirname
+
+TIMER_OPTIONS = {
+    '1/60 sec': 1 / 60.0,
+    '1/30 sec': 1 / 30.0,
+    '1/15 sec': 1 / 15.0,
+}
 
 
 class RefLabel(Label):
@@ -64,7 +71,7 @@ class {{cookiecutter.app_class_name}}(App):
     def start_timer(self, *args, **kwargs):
         """Schedule the timer update routine and fade in the progress bar."""
         Logger.debug("Starting timer")
-        Clock.schedule_interval(self._update_timer, 1 / 60.0)
+        Clock.schedule_interval(self._update_timer, self.timer_interval)
         self.progress_bar.fade_in()
 
     def stop_timer(self, *args, **kwargs):
@@ -91,6 +98,9 @@ class {{cookiecutter.app_class_name}}(App):
           (:class:`kivy.uix.anchorlayout.AnchorLayout`): Root widget specified
             in the kv file of the app
         """
+        user_interval = self.config.get('user_settings', 'timer_interval')
+        self.timer_interval = TIMER_OPTIONS[user_interval]
+
         self.carousel = self.root.ids.carousel
         self.progress_bar = self.root.ids.progress_bar
         self.progress_bar.max = self.property('timer').get_max(self)
@@ -99,6 +109,27 @@ class {{cookiecutter.app_class_name}}(App):
         self.carousel.bind(on_touch_down=self.stop_timer)
         self.carousel.bind(current_slide=self.delay_timer)
         return self.root
+
+    def build_config(self, config):
+        """Create a config file on disk and assign the ConfigParser object to
+        `self.config`.
+        """
+        config.setdefaults('user_settings', {'timer_interval': '1/60 sec'})
+
+    def build_settings(self, settings):
+        """Read the user settings and create a panel from it."""
+        settings_file =  join(dirname(__file__), 'user_settings.json')
+        settings.add_json_panel(self.title, self.config, settings_file)
+
+    def on_config_change(self, config, section, key, value):
+        """Called when the user changes the config values via the settings
+        panel. If `timer_interval` is being changed update the instance
+        variable of the same name accordingly.
+        """
+        if config is self.config:
+            token = (section, key)
+            if token == ('user_settings', 'timer_interval'):
+                self.timer_interval=TIMER_OPTIONS[value]
 
     def on_pause(self):
         """Enables the user to switch to another application causing
