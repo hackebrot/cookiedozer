@@ -4,6 +4,7 @@ Cookiedozer
 
 `Cookiecutter`_ template for Python `Kivy`_ apps ready to be deployed to android devices with `Buildozer`_.
 
+For a minimal `Kivy`_ app template please check out `cookiecutter-kivy`_.
 
 Features
 --------
@@ -74,5 +75,6 @@ Examples
 .. _`PyPI`: https://pypi.python.org/pypi
 .. _`Sphinx`: http://sphinx-doc.org/
 .. _`Wrapping up Cookiedozer`: http://www.hackebrot.de/python/wrapping-up-cookiedozer/
+.. _`cookiecutter-kivy`: https://github.com/hackebrot/cookiecutter-kivy
 .. _`file an issue`: https://github.com/hackebrot/cookiedozer/issues
 .. _`pytest`: http://pytest.org/latest/
