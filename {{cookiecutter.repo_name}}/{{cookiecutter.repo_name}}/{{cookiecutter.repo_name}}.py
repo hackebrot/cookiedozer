@@ -137,6 +137,8 @@ class {{cookiecutter.app_class_name}}(App):
             token = (section, key)
             if token == ('user_settings', 'timer_interval'):
                 self.timer_interval=TIMER_OPTIONS[value]
+            elif token == ('user_settings', 'language'):
+                self.language = value
 
     def on_pause(self):
         """Enables the user to switch to another application causing
