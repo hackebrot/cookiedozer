@@ -98,6 +98,8 @@ class {{cookiecutter.app_class_name}}(App):
           (:class:`kivy.uix.anchorlayout.AnchorLayout`): Root widget specified
             in the kv file of the app
         """
+        self.language = self.config.get('user_settings', 'language')
+
         user_interval = self.config.get('user_settings', 'timer_interval')
         self.timer_interval = TIMER_OPTIONS[user_interval]
 
@@ -114,7 +116,12 @@ class {{cookiecutter.app_class_name}}(App):
         """Create a config file on disk and assign the ConfigParser object to
         `self.config`.
         """
-        config.setdefaults('user_settings', {'timer_interval': '1/60 sec'})
+        config.setdefaults(
+            'user_settings', {
+                'timer_interval': '1/60 sec',
+                'language': 'en'
+            }
+        )
 
     def build_settings(self, settings):
         """Read the user settings and create a panel from it."""
