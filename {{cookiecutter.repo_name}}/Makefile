@@ -6,6 +6,8 @@ help:
 	@echo "docs - generate Sphinx HTML documentation and open it"
 	@echo "apk - build an android apk with buildozer"
 	@echo "deploy - deploy the app to your android device"
+	@echo "po - create i18n message file"
+	@echo "mo - create i18n locales files"
 
 test:
 	python setup.py test
