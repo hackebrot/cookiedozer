@@ -22,6 +22,11 @@ TIMER_OPTIONS = {
 }
 
 
+def _(text):
+    """This is just so we can use the default gettext format."""
+    return text
+
+
 class RefLabel(Label):
     """Simple that opens a contained url in the webbrowser."""
 
