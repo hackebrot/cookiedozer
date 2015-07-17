@@ -1,6 +1,7 @@
 #:kivy {{cookiecutter.kivy_version}}
 #:import randint random.randint
 #:import to_rgba kivy.utils.get_color_from_hex
+#:import _ {{cookiecutter.repo_name}}._
 
 #:set link_clr '222222'
 #:set kivy_github 'https://github.com/kivy/kivy'
@@ -38,29 +39,37 @@ AnchorLayout:
         RefLabel:
             bg_hex_clr: '057173'
             text:
-                "This app uses Kivy, a Python Framework for NUI Development.\n\n" \
-                "[ref={kivy_github}][color={link_clr}]{kivy_github}[/color][/ref]" \
-                "".format(**locals())
+                _(
+                    "This app uses Kivy, a Python Framework for NUI Development.\n\n" \
+                    "[ref={kivy_github}][color={link_clr}]{kivy_github}[/color][/ref]" \
+                    "".format(**locals())
+                )
             name: 'kivy'
         RefLabel:
             bg_hex_clr: '487353'
             text:
-                "It was generated with the Python command-line utility\nCookiecutter along with Cookiedozer.\n\n" \
-                "[ref={cookiecutter_github}][color={link_clr}]{cookiecutter_github}[/color][/ref]\n" \
-                "[ref={cookiedozer_github}][color={link_clr}]{cookiedozer_github}[/color][/ref]\n" \
-                "".format(**locals())
+                _(
+                    "It was generated with the Python command-line utility\nCookiecutter along with Cookiedozer.\n\n" \
+                    "[ref={cookiecutter_github}][color={link_clr}]{cookiecutter_github}[/color][/ref]\n" \
+                    "[ref={cookiedozer_github}][color={link_clr}]{cookiedozer_github}[/color][/ref]\n" \
+                    "".format(**locals())
+                )
             name: 'cookiecutterdozer'
         RefLabel:
             bg_hex_clr: 'C2872E'
             text:
-                "Distributed under the terms of the MIT license,\n'{{cookiecutter.app_title}}' is free and open source software."
+                _(
+                    "Distributed under the terms of the MIT license,\n'{{cookiecutter.app_title}}' is free and open source software."
+                )
             name: 'license'
         RefLabel:
             bg_hex_clr: 'AB3E2B'
             text:
-                "Fork me on GitHub\n\n" \
-                "[ref={repo_github}][color={link_clr}]{repo_github}[/color][/ref]" \
-                "".format(**locals())
+                _(
+                    "Fork me on GitHub\n\n" \
+                    "[ref={repo_github}][color={link_clr}]{repo_github}[/color][/ref]" \
+                    "".format(**locals())
+                )
             name: 'github'
     TransitionProgress:
         id: progress_bar
