@@ -46,18 +46,28 @@ AnchorLayout:
             I18NLabel:
                 source_text: _("'{{cookiecutter.app_title}}'\n\n{{cookiecutter.short_description}}")
         Slide:
+            spacing: 10
             bg_hex_clr: '057173'
             I18NLabel:
+                text_size: self.size
+                valign: 'bottom'
                 source_text: _("This app uses Kivy, a Python Framework for NUI Development.")
             RefLabel:
+                text_size: self.size
+                valign: 'top'
                 text:
                     "[ref={kivy_github}][color={link_clr}]{kivy_github}[/color][/ref]" \
                     "".format(**locals())
         Slide:
+            spacing: 10
             bg_hex_clr: '487353'
             I18NLabel:
+                valign: 'bottom'
+                text_size: self.size
                 source_text: _("It was generated with the Python command-line utility\nCookiecutter along with Cookiedozer.")
             RefLabel:
+                valign: 'top'
+                text_size: self.size
                 text:
                     "[ref={cookiecutter_github}][color={link_clr}]{cookiecutter_github}[/color][/ref]\n" \
                     "[ref={cookiedozer_github}][color={link_clr}]{cookiedozer_github}[/color][/ref]\n" \
@@ -67,10 +77,15 @@ AnchorLayout:
             I18NLabel:
                 source_text: _("Distributed under the terms of the MIT license,\n'{{cookiecutter.app_title}}' is free and open source software.")
         Slide:
+            spacing: 10
             bg_hex_clr: 'AB3E2B'
             I18NLabel:
+                valign: 'bottom'
+                text_size: self.size
                 source_text: _("Fork me on GitHub")
             RefLabel:
+                valign: 'top'
+                text_size: self.size
                 text:
                     "[ref={repo_github}][color={link_clr}]{repo_github}[/color][/ref]" \
                     "".format(**locals())
