@@ -10,7 +10,6 @@
 #:set repo_github 'https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.repo_name}}'
 
 <Slide@BoxLayout>:
-    spacing: 10
     bg_hex_clr: '000000'
     orientation: 'vertical'
     canvas.before:
@@ -24,15 +23,11 @@
 <I18NLabel>:
     source_text: ''
     halign: 'center'
-    valign: 'bottom'
-    text_size: self.size
     text: app.translation(self.source_text)
 
 
 <RefLabel>:
     halign: 'center'
-    valign: 'top'
-    text_size: self.size
     markup: True
 
 
@@ -46,46 +41,38 @@ AnchorLayout:
     Carousel:
         id: carousel
         loop: True
-        RefLabel:
+        Slide:
             bg_hex_clr: '154152'
-            text:
-                "'{{cookiecutter.app_title}}'\n\n" \
-                "{{cookiecutter.short_description}}"
-            name: 'hello'
-        RefLabel:
+            I18NLabel:
+                source_text: _("'{{cookiecutter.app_title}}'\n\n{{cookiecutter.short_description}}")
+        Slide:
             bg_hex_clr: '057173'
-            text:
-                _(
-                    "This app uses Kivy, a Python Framework for NUI Development.\n\n" \
+            I18NLabel:
+                source_text: _("This app uses Kivy, a Python Framework for NUI Development.")
+            RefLabel:
+                text:
                     "[ref={kivy_github}][color={link_clr}]{kivy_github}[/color][/ref]" \
                     "".format(**locals())
-                )
-            name: 'kivy'
-        RefLabel:
+        Slide:
             bg_hex_clr: '487353'
-            text:
-                _(
-                    "It was generated with the Python command-line utility\nCookiecutter along with Cookiedozer.\n\n" \
+            I18NLabel:
+                source_text: _("It was generated with the Python command-line utility\nCookiecutter along with Cookiedozer.")
+            RefLabel:
+                text:
                     "[ref={cookiecutter_github}][color={link_clr}]{cookiecutter_github}[/color][/ref]\n" \
                     "[ref={cookiedozer_github}][color={link_clr}]{cookiedozer_github}[/color][/ref]\n" \
                     "".format(**locals())
-                )
-            name: 'cookiecutterdozer'
-        RefLabel:
+        Slide:
             bg_hex_clr: 'C2872E'
-            text:
-                _(
-                    "Distributed under the terms of the MIT license,\n'{{cookiecutter.app_title}}' is free and open source software."
-                )
-            name: 'license'
-        RefLabel:
+            I18NLabel:
+                source_text: _("Distributed under the terms of the MIT license,\n'{{cookiecutter.app_title}}' is free and open source software.")
+        Slide:
             bg_hex_clr: 'AB3E2B'
-            text:
-                _(
-                    "Fork me on GitHub\n\n" \
+            I18NLabel:
+                source_text: _("Fork me on GitHub")
+            RefLabel:
+                text:
                     "[ref={repo_github}][color={link_clr}]{repo_github}[/color][/ref]" \
                     "".format(**locals())
-                )
-            name: 'github'
     TransitionProgress:
         id: progress_bar
