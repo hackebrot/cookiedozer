@@ -22,4 +22,18 @@ def rename_kv_file():
     os.rename(old_kv_file, new_kv_file)
 
 
+
+def generate_i18n_locales():
+    """Run 'make mo' to generate the locales from the po files. The app won't
+    run without the translation files.
+    """
+    import logging
+    import subprocess
+    try:
+        subprocess.check_call(['make', 'mo'])
+    except subprocess.CalledProcessError:
+        logging.warning('Unable to create i18n translation files.')
+
+
 rename_kv_file()
+generate_i18n_locales()
