@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import webbrowser
+import gettext
 
 import kivy
 kivy.require('{{cookiecutter.kivy_version}}')
@@ -9,7 +10,9 @@ from kivy.animation import Animation
 from kivy.app import App
 from kivy.clock import Clock
 from kivy.logger import Logger
-from kivy.properties import BoundedNumericProperty, ObjectProperty
+from kivy.properties import (
+    BoundedNumericProperty, ObjectProperty, StringProperty
+)
 from kivy.uix.carousel import Carousel
 from kivy.uix.label import Label
 from kivy.uix.progressbar import ProgressBar
@@ -74,6 +77,9 @@ class {{cookiecutter.app_class_name}}(App):
     """
 
     title = '{{cookiecutter.app_title}}'
+
+    language = StringProperty('en')
+    translation = ObjectProperty(None, allownone=True)
 
     timer = BoundedNumericProperty(0, min=0, max=400)
     carousel = ObjectProperty(Carousel)
@@ -170,3 +176,13 @@ class {{cookiecutter.app_class_name}}(App):
             self.stop_timer()
             self.carousel.load_next()
             Logger.debug("Automatically loading next slide")
+
+    def on_language(self, instance, language):
+        self.switch_lang(language)
+
+    def switch_lang(self, language):
+        locale_dir = join(dirname(dirname(__file__)), 'data', 'locales')
+        locales = gettext.translation(
+            '{{cookiecutter.repo_name}}', locale_dir, languages=[self.language]
+        )
+        self.translation = locales.ugettext
