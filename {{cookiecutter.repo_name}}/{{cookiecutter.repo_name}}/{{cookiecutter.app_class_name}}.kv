@@ -9,16 +9,32 @@
 #:set cookiedozer_github 'https://github.com/hackebrot/cookiedozer'
 #:set repo_github 'https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.repo_name}}'
 
-<RefLabel>:
+<Slide@BoxLayout>:
+    spacing: 10
     bg_hex_clr: '000000'
-    markup: True
-    halign: 'center'
+    orientation: 'vertical'
     canvas.before:
         Color:
             rgba: to_rgba(root.bg_hex_clr)
         Rectangle:
             pos: self.pos
             size: self.size
+
+
+<I18NLabel>:
+    source_text: ''
+    halign: 'center'
+    valign: 'bottom'
+    text_size: self.size
+    text: app.translation(self.source_text)
+
+
+<RefLabel>:
+    halign: 'center'
+    valign: 'top'
+    text_size: self.size
+    markup: True
+
 
 <TransitionProgress>:
     size_hint: 0.8, 0.1
