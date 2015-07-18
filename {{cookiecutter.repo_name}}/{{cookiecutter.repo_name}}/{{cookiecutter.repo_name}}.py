@@ -84,6 +84,10 @@ class {{cookiecutter.app_class_name}}(App):
     timer = BoundedNumericProperty(0, min=0, max=400)
     carousel = ObjectProperty(Carousel)
 
+    def __init__(self, **kwargs):
+        self.switch_lang(self.language)
+        super({{cookiecutter.app_class_name}}, self).__init__(**kwargs)
+
     def start_timer(self, *args, **kwargs):
         """Schedule the timer update routine and fade in the progress bar."""
         Logger.debug("Starting timer")
