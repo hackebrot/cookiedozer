@@ -1,11 +1,17 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import logging
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger('post_gen_project')
+
 
 def rename_kv_file():
     """Rename the generated kv file to be compatible with the original kivy kv
     file detection of `App.load_kv`.
     """
+    logger.info('Renaming kv file')
+
     import os
     package_dir = '{{cookiecutter.repo_name}}'
     old_kv_file = os.path.join(
@@ -22,17 +28,17 @@ def rename_kv_file():
     os.rename(old_kv_file, new_kv_file)
 
 
-
 def generate_i18n_locales():
     """Run 'make mo' to generate the locales from the po files. The app won't
     run without the translation files.
     """
-    import logging
+    logger.info('Generating i18n translation files')
+
     import subprocess
     try:
         subprocess.check_call(['make', 'mo'])
     except subprocess.CalledProcessError:
-        logging.warning('Unable to create i18n translation files.')
+        logger.warning('Unable to create i18n translation files.')
 
 
 rename_kv_file()
