@@ -27,6 +27,11 @@ def _(text):
     return text
 
 
+class I18NLabel(Label):
+    """Label that supports internationlization."""
+    source_text = StringProperty('')
+
+
 class RefLabel(Label):
     """Simple that opens a contained url in the webbrowser."""
 
