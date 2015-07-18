@@ -42,10 +42,12 @@ AnchorLayout:
         id: carousel
         loop: True
         Slide:
+            name: 'hello'
             bg_hex_clr: '154152'
             I18NLabel:
                 source_text: _("'{{cookiecutter.app_title}}'\n\n{{cookiecutter.short_description}}")
         Slide:
+            name: 'kivy'
             spacing: 10
             bg_hex_clr: '057173'
             I18NLabel:
@@ -59,6 +61,7 @@ AnchorLayout:
                     "[ref={kivy_github}][color={link_clr}]{kivy_github}[/color][/ref]" \
                     "".format(**locals())
         Slide:
+            name: 'cookiecutterdozer'
             spacing: 10
             bg_hex_clr: '487353'
             I18NLabel:
@@ -73,10 +76,12 @@ AnchorLayout:
                     "[ref={cookiedozer_github}][color={link_clr}]{cookiedozer_github}[/color][/ref]\n" \
                     "".format(**locals())
         Slide:
+            name: 'license'
             bg_hex_clr: 'C2872E'
             I18NLabel:
                 source_text: _("Distributed under the terms of the MIT license,\n'{{cookiecutter.app_title}}' is free and open source software.")
         Slide:
+            name: 'github'
             spacing: 10
             bg_hex_clr: 'AB3E2B'
             I18NLabel:
