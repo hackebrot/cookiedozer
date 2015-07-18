@@ -34,5 +34,5 @@ po:
 mo:
 	mkdir -p data/locales/en/LC_MESSAGES
 	mkdir -p data/locales/de/LC_MESSAGES
-	msgfmt -c -o data/locales/en/LC_MESSAGES/langapp.mo po/en.po
-	msgfmt -c -o data/locales/de/LC_MESSAGES/langapp.mo po/de.po
+	msgfmt -c -o data/locales/en/LC_MESSAGES/{{cookiecutter.repo_name}}.mo po/en.po
+	msgfmt -c -o data/locales/de/LC_MESSAGES/{{cookiecutter.repo_name}}.mo po/de.po
