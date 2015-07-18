@@ -3,7 +3,7 @@
 import pytest
 
 
-@pytest.fixture(scope="module")
+@pytest.fixture(scope="session")
 def app(request):
     """Uses the InteractiveLauncher to provide access to an app instance.
 
@@ -39,7 +39,7 @@ def test_app_title(app):
     assert app.title == '{{cookiecutter.app_title}}'
 
 
-@pytest.fixture(scope="module")
+@pytest.fixture
 def carousel(app):
     """Fixture to get the carousel widget of the test app."""
     return app.carousel
