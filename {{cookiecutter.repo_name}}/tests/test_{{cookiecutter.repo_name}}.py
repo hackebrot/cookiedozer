@@ -56,8 +56,6 @@ def test_carousel(carousel):
       AssertionError: If the first slide does not contain *Hello*
       AssertionError: If the names of the slides do not match the expectations
     """
-    assert '{{cookiecutter.app_title}}' in carousel.current_slide.text
-
     names = [slide.name for slide in carousel.slides]
     expected = ['hello', 'kivy', 'cookiecutterdozer', 'license', 'github']
     assert names == expected
