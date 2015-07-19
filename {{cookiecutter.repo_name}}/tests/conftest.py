@@ -1,6 +1,27 @@
 # -*- coding: utf-8 -*-
 
+import os
 import pytest
+import shutil
+
+@pytest.fixture(autouse=True)
+def ignore_app_ini(request):
+    settings_file = '{{cookiecutter.repo_name}}/{{cookiecutter.repo_name}}.ini'
+    backup_file = '{{cookiecutter.repo_name}}/_{{cookiecutter.repo_name}}.ini'
+
+    if os.path.exists(settings_file):
+        app_ini_found = True
+        shutil.copy(settings_file, backup_file)
+        os.remove(settings_file)
+    else:
+        app_ini_found = False
+
+    def restore_app_ini():
+        if app_ini_found and os.path.exists(backup_file):
+            shutil.copy(backup_file, settings_file)
+            os.remove(backup_file)
+
+    request.addfinalizer(restore_app_ini)
 
 
 @pytest.fixture(scope="session")
