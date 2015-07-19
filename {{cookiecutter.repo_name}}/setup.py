@@ -41,7 +41,7 @@ setup(
         "android, touch, mobile, NUI"
     ),
     url='https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.repo_name}}',
-    install_requires=['kivy>=1.8.0'],
+    install_requires=['kivy>={{cookiecutter.kivy_version}}'],
     zip_safe=False,
     packages=find_packages(),
     include_package_data=True,
