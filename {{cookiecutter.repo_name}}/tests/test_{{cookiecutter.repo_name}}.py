@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import pytest
-
 
 def test_app_title(app):
     """Simply tests if the default app title meets the expectations.
