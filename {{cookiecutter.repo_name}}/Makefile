@@ -1,4 +1,4 @@
-.PHONY: docs
+.PHONY: docs po mo
 
 help:
 	@echo "test - run the test py.test suite"
@@ -6,6 +6,8 @@ help:
 	@echo "docs - generate Sphinx HTML documentation and open it"
 	@echo "apk - build an android apk with buildozer"
 	@echo "deploy - deploy the app to your android device"
+	@echo "po - create i18n message file"
+	@echo "mo - create i18n locales files"
 
 test:
 	python setup.py test
@@ -23,3 +25,14 @@ apk:
 
 deploy:
 	buildozer android deploy logcat
+
+po:
+	xgettext -Lpython --keyword=tr:1 --output=messages.pot {{cookiecutter.repo_name}}/*.kv
+	msgmerge --update --no-fuzzy-matching --backup=off po/en.po messages.pot
+	msgmerge --update --no-fuzzy-matching --backup=off po/de.po messages.pot
+
+mo:
+	mkdir -p data/locales/en/LC_MESSAGES
+	mkdir -p data/locales/de/LC_MESSAGES
+	msgfmt -c -o data/locales/en/LC_MESSAGES/{{cookiecutter.repo_name}}.mo po/en.po
+	msgfmt -c -o data/locales/de/LC_MESSAGES/{{cookiecutter.repo_name}}.mo po/de.po

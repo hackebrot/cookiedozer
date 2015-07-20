@@ -7,5 +7,14 @@
         "true": "auto",
         "options": ["1/60 sec", "1/30 sec", "1/15 sec"],
         "desc": "Changes the delay after which the timer is being updated."
+    },
+    {
+        "title": "Language",
+        "type": "options",
+        "section": "user_settings",
+        "key": "language",
+        "true": "auto",
+        "options": ["en", "de"],
+        "desc": "Changes the display language of the application."
     }
 ]

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import webbrowser
+import gettext
 
 import kivy
 kivy.require('{{cookiecutter.kivy_version}}')
@@ -9,7 +10,9 @@ from kivy.animation import Animation
 from kivy.app import App
 from kivy.clock import Clock
 from kivy.logger import Logger
-from kivy.properties import BoundedNumericProperty, ObjectProperty
+from kivy.properties import (
+    BoundedNumericProperty, ObjectProperty, StringProperty
+)
 from kivy.uix.carousel import Carousel
 from kivy.uix.label import Label
 from kivy.uix.progressbar import ProgressBar
@@ -20,6 +23,16 @@ TIMER_OPTIONS = {
     '1/30 sec': 1 / 30.0,
     '1/15 sec': 1 / 15.0,
 }
+
+
+def _(text):
+    """This is just so we can use the default gettext format."""
+    return text
+
+
+class I18NLabel(Label):
+    """Label that supports internationlization."""
+    source_text = StringProperty('')
 
 
 class RefLabel(Label):
@@ -65,8 +78,15 @@ class {{cookiecutter.app_class_name}}(App):
 
     title = '{{cookiecutter.app_title}}'
 
+    language = StringProperty('en')
+    translation = ObjectProperty(None, allownone=True)
+
     timer = BoundedNumericProperty(0, min=0, max=400)
     carousel = ObjectProperty(Carousel)
+
+    def __init__(self, **kwargs):
+        self.switch_lang(self.language)
+        super({{cookiecutter.app_class_name}}, self).__init__(**kwargs)
 
     def start_timer(self, *args, **kwargs):
         """Schedule the timer update routine and fade in the progress bar."""
@@ -98,6 +118,8 @@ class {{cookiecutter.app_class_name}}(App):
           (:class:`kivy.uix.anchorlayout.AnchorLayout`): Root widget specified
             in the kv file of the app
         """
+        self.language = self.config.get('user_settings', 'language')
+
         user_interval = self.config.get('user_settings', 'timer_interval')
         self.timer_interval = TIMER_OPTIONS[user_interval]
 
@@ -114,7 +136,12 @@ class {{cookiecutter.app_class_name}}(App):
         """Create a config file on disk and assign the ConfigParser object to
         `self.config`.
         """
-        config.setdefaults('user_settings', {'timer_interval': '1/60 sec'})
+        config.setdefaults(
+            'user_settings', {
+                'timer_interval': '1/60 sec',
+                'language': 'en'
+            }
+        )
 
     def build_settings(self, settings):
         """Read the user settings and create a panel from it."""
@@ -130,6 +157,8 @@ class {{cookiecutter.app_class_name}}(App):
             token = (section, key)
             if token == ('user_settings', 'timer_interval'):
                 self.timer_interval=TIMER_OPTIONS[value]
+            elif token == ('user_settings', 'language'):
+                self.language = value
 
     def on_pause(self):
         """Enables the user to switch to another application causing
@@ -151,3 +180,13 @@ class {{cookiecutter.app_class_name}}(App):
             self.stop_timer()
             self.carousel.load_next()
             Logger.debug("Automatically loading next slide")
+
+    def on_language(self, instance, language):
+        self.switch_lang(language)
+
+    def switch_lang(self, language):
+        locale_dir = join(dirname(dirname(__file__)), 'data', 'locales')
+        locales = gettext.translation(
+            '{{cookiecutter.repo_name}}', locale_dir, languages=[self.language]
+        )
+        self.translation = locales.ugettext
