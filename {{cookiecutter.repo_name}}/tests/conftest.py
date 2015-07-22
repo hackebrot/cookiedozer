@@ -35,7 +35,7 @@ def app(request):
     """
     from kivy.interactive import InteractiveLauncher
     from {{cookiecutter.repo_name}}.{{cookiecutter.repo_name}} import {{cookiecutter.app_class_name}}
-    launcher = InteractiveLauncher({{cookiecutter.app_class_name}}())
+    launcher = InteractiveLauncher({{cookiecutter.app_class_name}}('en'))
 
     def stop_launcher():
         launcher.safeOut()
