@@ -21,7 +21,7 @@ def cli_param(request):
 
 @pytest.fixture
 def mock_app(mocker):
-    return  mocker.patch('{{cookiecutter.repo_name}}.{{cookiecutter.app_class_name}}')
+    return mocker.patch('{{cookiecutter.repo_name}}.cli.{{cookiecutter.app_class_name}}')
 
 
 def test_language_to_app(runner, mock_app, cli_param, lang):
