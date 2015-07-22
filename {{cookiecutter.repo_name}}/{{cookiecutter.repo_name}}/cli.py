@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import os
 os.environ["KIVY_NO_ARGS"] = "1"
 
