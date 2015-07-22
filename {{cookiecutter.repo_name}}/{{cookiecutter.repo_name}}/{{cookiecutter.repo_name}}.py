@@ -84,7 +84,8 @@ class {{cookiecutter.app_class_name}}(App):
     timer = BoundedNumericProperty(0, min=0, max=400)
     carousel = ObjectProperty(Carousel)
 
-    def __init__(self, **kwargs):
+    def __init__(self, language, **kwargs):
+        self.language = language
         self.switch_lang(self.language)
         super({{cookiecutter.app_class_name}}, self).__init__(**kwargs)
 
