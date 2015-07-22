@@ -1,7 +1,7 @@
 import pytest
 from click.testing import CliRunner
 
-from cli import main
+from {{cookiecutter.repo_name}}.cli import main
 
 
 @pytest.fixture
@@ -9,7 +9,7 @@ def runner():
     return CliRunner()
 
 
-@pytest.fixture(params=['fr', 'en', 'tlh'])
+@pytest.fixture(params=['en', 'de'])
 def lang(request):
     return request.param
 
