@@ -9,7 +9,7 @@ def runner():
     return CliRunner()
 
 
-@pytest.fixture(params=['en', 'de'])
+@pytest.fixture(params=['en', 'es', 'de', 'fr'])
 def lang(request):
     return request.param
 

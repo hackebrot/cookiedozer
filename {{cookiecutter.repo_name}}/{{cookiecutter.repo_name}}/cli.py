@@ -12,7 +12,7 @@ from {{cookiecutter.repo_name}} import {{cookiecutter.app_class_name}}
 @click.command()
 @click.option(
     '-l', '--language', help='Default language of the App', default='en',
-    type=click.Choice(['en', 'de'])
+    type=click.Choice(['en', 'es', 'de', 'fr'])
 )
 def main(language):
     """Run {{cookiecutter.app_class_name}} with the given language setting.
