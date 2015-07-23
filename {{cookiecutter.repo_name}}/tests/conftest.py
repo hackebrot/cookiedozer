@@ -6,8 +6,8 @@ import shutil
 
 @pytest.fixture(autouse=True)
 def ignore_app_ini(request):
-    settings_file = '{{cookiecutter.repo_name}}/{{cookiecutter.repo_name}}.ini'
-    backup_file = '{{cookiecutter.repo_name}}/_{{cookiecutter.repo_name}}.ini'
+    settings_file = '{{cookiecutter.repo_name}}/{{cookiecutter.app_class_name}}.ini'
+    backup_file = '{{cookiecutter.repo_name}}/_{{cookiecutter.app_class_name}}.ini'
 
     if os.path.exists(settings_file):
         app_ini_found = True
