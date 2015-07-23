@@ -9,6 +9,8 @@
 #:set cookiedozer_github 'https://github.com/hackebrot/cookiedozer'
 #:set repo_github 'https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.repo_name}}'
 
+#:set fsize 15
+
 <Slide@BoxLayout>:
     bg_hex_clr: '000000'
     orientation: 'vertical'
@@ -23,11 +25,13 @@
 <I18NLabel>:
     source_text: ''
     halign: 'center'
+    font_sizeL: fsize
     text: app.translation(self.source_text)
 
 
 <RefLabel>:
     halign: 'center'
+    font_sizeL: fsize
     markup: True
 
 
