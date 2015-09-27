@@ -14,7 +14,7 @@
         "section": "user_settings",
         "key": "language",
         "true": "auto",
-        "options": ["en", "de"],
+        "options": ["en", "es", "de", "fr"],
         "desc": "Changes the display language of the application."
     }
 ]

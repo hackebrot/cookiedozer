@@ -1,0 +1,51 @@
+# {{cookiecutter.short_description}}
+# Copyright (C) {{cookiecutter.year}} {{cookiecutter.full_name}}
+# This file is distributed under the same license as the {{cookiecutter.repo_name}} package.
+# {{cookiecutter.full_name}} <{{cookiecutter.email}}>, {{cookiecutter.year}}.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: {{cookiecutter.version}}\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-18 13:00+0200\n"
+"PO-Revision-Date: 2015-07-18 13:00+0200\n"
+"Last-Translator: {{cookiecutter.full_name}} <{{cookiecutter.email}}>\n"
+"Language-Team: English <{{cookiecutter.email}}>\n"
+"Language: German\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: foobar/helloworld.kv:47
+msgid ""
+"'{{cookiecutter.app_title}}'\n"
+"\n"
+"{{cookiecutter.short_description}}"
+msgstr ""
+"'{{cookiecutter.app_title}}'\n"
+"\n"
+"{{cookiecutter.short_description}}"
+
+#: foobar/helloworld.kv:51
+msgid "This app uses Kivy, a Python Framework for NUI Development."
+msgstr "Esta application usa Kivy, un framework Python para NUI Development."
+
+#: foobar/helloworld.kv:59
+msgid ""
+"It was generated with the Python command-line utility\n"
+"Cookiecutter along with Cookiedozer."
+msgstr ""
+"Fue generado usando el commando Python\n"
+"Cookiecutter junto con Cookiedozer."
+
+#: foobar/helloworld.kv:68
+msgid ""
+"Distributed under the terms of the MIT license,\n"
+"'{{cookiecutter.app_title}}' is free and open source software."
+msgstr ""
+"Distribuido bajo condiciones de uso y licencia MIT,\n"
+"'{{cookiecutter.app_title}}' es un programa libre y gratuito."
+
+#: foobar/helloworld.kv:72
+msgid "Fork me on GitHub"
+msgstr "Fork me on GitHub"
