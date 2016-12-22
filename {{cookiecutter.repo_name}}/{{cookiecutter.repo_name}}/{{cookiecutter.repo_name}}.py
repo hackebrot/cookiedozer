@@ -2,6 +2,7 @@
 
 import webbrowser
 import gettext
+import sys
 
 import kivy
 kivy.require('{{cookiecutter.kivy_version}}')
@@ -190,4 +191,8 @@ class {{cookiecutter.app_class_name}}(App):
         locales = gettext.translation(
             '{{cookiecutter.repo_name}}', locale_dir, languages=[self.language]
         )
-        self.translation = locales.ugettext
+
+        if sys.version_info.major >= 3:
+            self.translation = locales.gettext
+        else:
+            self.translation = locales.ugettext
