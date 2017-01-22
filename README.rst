@@ -30,9 +30,9 @@ Tutorials
 
 Parts of this template are explained in great detail over the course of the following tutorials:
 
-* Part 1: `Create Your Own Cookiecutter`_
-* Part 2: `Extending Cookiedozer`_
-* Part 3: `Wrapping up Cookiedozer`_
+* Part 1: `Create your own Cookiecutter template`_
+* Part 2: `Extending our Cookiecutter template`_
+* Part 3: `Wrapping up our Cookiecutter template`_
 
 
 Constraints
@@ -68,13 +68,13 @@ Examples
 .. _`Buildozer Docs`: http://buildozer.readthedocs.org/en/latest/index.html
 .. _`Buildozer`: https://github.com/kivy/buildozer
 .. _`Cookiecutter`: https://github.com/audreyr/cookiecutter
-.. _`Create Your Own Cookiecutter`: http://www.hackebrot.de/python/create-your-own-cookiecutter/
-.. _`Extending Cookiedozer`: http://www.hackebrot.de/python/extending-cookiedozer/
+.. _`Create your own Cookiecutter template`: https://raphael.codes/blog/create-your-own-cookiecutter-template/
+.. _`Extending our Cookiecutter template`: https://raphael.codes/blog/extending-our-cookiecutter-template/
 .. _`Kivy`: https://github.com/kivy/kivy
 .. _`MIT License`: http://opensource.org/licenses/MIT
 .. _`PyPI`: https://pypi.python.org/pypi
 .. _`Sphinx`: http://sphinx-doc.org/
-.. _`Wrapping up Cookiedozer`: http://www.hackebrot.de/python/wrapping-up-cookiedozer/
+.. _`Wrapping up our Cookiecutter template`: https://raphael.codes/blog/wrapping-up-our-cookiecutter-template/
 .. _`cookiecutter-kivy`: https://github.com/hackebrot/cookiecutter-kivy
 .. _`file an issue`: https://github.com/hackebrot/cookiedozer/issues
 .. _`pytest`: http://pytest.org/latest/
