@@ -2,6 +2,8 @@
 Cookiedozer
 ===========
 
+**Please note that this project is no longer actively maintained.** 🚧
+
 Feature-rich `Cookiecutter`_ template for Python `Kivy`_ apps that greatly simplifies the deployment to Android devices using `Buildozer`_.
 
 For a minimal `Kivy`_ app template please check out `cookiecutter-kivy`_.
